@@ -1,5 +1,5 @@
 # text-encryption-and-decryption
-Encrypt and decrypt text in C
+Encrypt and decrypt text in C and C++
 
 ENCRYPTION
 -----------------
