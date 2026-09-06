@@ -5,45 +5,67 @@ ENCRYPTION
 -----------------
 --> Have some text input as string.
 
-    Ex--> Pratyush
+    Ex--> PRATYUSH
 
 --> Add a pointer at the end of string.
 
-    Ex--> Pratyush|
+    Ex--> PRATYUSH|
     
 --> Apply Burrows Wheeler Transformation.
 
     --> Get all possible rotations by one unit displacement.
     
-        Ex--> |Pratyush
+        Ex--> |PRATYUSH
         
-              U|Pratyush
+              H|PRATYUS
               
-              HU|Pratyush
+              SH|PRATYU
               
-              SHU|Pratyush
+              USH|PRATY
               
-              ISHU|Pratyush
+              YUSH|PRAT
               
-              Pratyush|
+              TYUSH|PRA
+
+              ATYUSH|PR
+
+              RATYUSH|P
+              
+              PRATYUSH|
+
               
     --> Arrange all rotations in lexical order.
     
-        Ex--> HU|Pratyush
+        Ex--> ATYUSH|PR
         
-              ISHU|Pratyush
+              H|PRATYUS
               
-              Pratyush|
+              PRATYUSH|
               
-              SHU|Pratyush
+              RATYUSH|P
               
-              U|Pratyush
+              SH|PRATYU
               
-              |Pratyush
+              TYUSH|PRA
+
+              USH|PRATY
+
+              YUSH|PRAT
+
+              |PRATYUSH
               
 --> String with last characters of lexicographically orderd rotations is the encrypted text.
+| Sorted Index | Lexicographically Sorted Rotations | Last Character |
+| 1            | A T Y U S H P R | R |
+| 2            | H P R A T Y U S | S |
+| 3            | P R A T Y U S H | H |
+| 4            | R A T Y U S H P | P |
+| 5            | S H P R A T Y U | U |
+| 6            | T Y U S H P R A | A |
+| 7            | U S H P R A T Y | Y |
+| 8            | Y U S H P R A T | T |
 
-    Ex--> SR|IHU
+    Ex--> RS|PUAYTH
     
 --> Could save the encrpted text in file.
 
@@ -52,42 +74,52 @@ DECRYPTION
 -----------------
 --> Have encrypted text as input or from a file and arrange in a coloumn.
 
-    Ex--> S
+    Ex--> R
     
-          R
+          S
           
           |
           
-          I
-          
-          H
+          P
           
           U
+          
+          A
+
+          Y
+
+          T
+
+          H
           
 --> Arrange in lexical order.
 
 --> Add up arranged coloumn with encrypted coloumn.
 
---> To get all possible rotations repeat previous two steps.
+Ex--> Encrypted   Arrange   Add     Arrange   Add     Arrange   Add     Arrange   Add     Arrange   Add
 
-Ex--> Encrypted  Arrange   Add     Arrange   Add     Arrange   Add     Arrange   Add     Arrange   Add
+      ---------   -------   ------  -------   ------  -------   ------  -------   ------  -------   ------
 
-      ---------  -------   ------  -------   ------  -------   ------  -------   ------  -------   ------
-      
-          S      H         SH      HU        SHU      HU|      SHU|    HU|R      SHU|R   HU|RI     SHU|RI
-          
-          R      I         RI      IS        RIS      ISH      Pratyush    ISHU      Pratyush   ISHU|     Pratyush|
-          
-          |      R         |R      RI        |RI      RIS      |Pratyush    Pratyush      |Pratyush   Pratyush     |Pratyush
-          
-          I      S         IS      SH        ISH      SHU      ISHU    SHU|      ISHU|   SHU|R     ISHU|R
-          
-          H      U         HU      U|        HU|      U~R      HU|R    U|RI      HU|RI   U|RIS     HU|RIS
-          
-          U      |         U|      |R        U|R      |RI      U|RI    |RIS      U|RIS   |Pratyush     U|Pratyush
-          
---> In last add coloumn find string which ends with pointer.
+          R          A       RA       AT       RAT     ATY       RATY    RATYU     RATYUS  RATYUSH   RATYUSH|P
 
-    Ex--> Pratyush|
-    
---> Could store this decrypted text in file.
+          S          H       SH       H|       SH|     SH|P      SH|PR   SH|PRA    SH|PRAT SH|PRATY  SH|PRATYU
+
+          |          P       |P       PR       |PR     |PRA      |PRAT   |PRATY    |PRATYU |PRATYUS  |PRATYUSH
+
+          P          R       PR       RA       PRA     PRAT      PRATY   PRATYU    PRATYUS PRATYUSH  PRATYUSH|
+
+          U          S       US       SH       USH     USH|      USH|P   USH|PR    USH|PRA  USH|PRAT  USH|PRATY
+
+          A          T       AT       TY       ATY     ATYU      ATYUS   ATYUSH    ATYUSH| ATYUSH|P  ATYUSH|PR
+
+          Y          U       YU       US       YUS     YUSH      YUSH|   YUSH|P    YUSH|PR YUSH|PRA  YUSH|PRAT
+
+          T          Y       TY       YU       TYU     TYUS      TYUSH   TYUSH|    TYUSH|P TYUSH|PR  TYUSH|PRA
+
+          H          |       H|       |P       H|P     H|PR      H|PRA   H|PRAT    H|PRATY H|PRATYU  H|PRATYUS
+
+--> In last add column find string which ends with pointer.
+
+    Ex--> PRATYUSH|
+
+--> Could store this decrypted text in file. 
