@@ -53,7 +53,7 @@ ENCRYPTION
               YUSH|PRAT
 
               |PRATYUSH
-              
+```c              
 --> String with last characters of lexicographically orderd rotations is the encrypted text.
 | Sorted Index | Lexicographically Sorted Rotations | Last Character |
 | 1            | A T Y U S H P R | R |
@@ -64,7 +64,7 @@ ENCRYPTION
 | 6            | T Y U S H P R A | A |
 | 7            | U S H P R A T Y | Y |
 | 8            | Y U S H P R A T | T |
-
+```
     Ex--> RS|PUAYTH
     
 --> Could save the encrpted text in file.
@@ -95,8 +95,8 @@ DECRYPTION
 --> Arrange in lexical order.
 
 --> Add up arranged coloumn with encrypted coloumn.
-
-Ex--> Encrypted   Arrange   Add     Arrange   Add     Arrange   Add     Arrange   Add     Arrange   Add
+```c
+Ex-->   Encrypted   Arrange   Add     Arrange   Add     Arrange   Add     Arrange   Add     Arrange   Add
 
       ---------   -------   ------  -------   ------  -------   ------  -------   ------  -------   ------
 
@@ -117,7 +117,7 @@ Ex--> Encrypted   Arrange   Add     Arrange   Add     Arrange   Add     Arrange 
           T          Y       TY       YU       TYU     TYUS      TYUSH   TYUSH|    TYUSH|P TYUSH|PR  TYUSH|PRA
 
           H          |       H|       |P       H|P     H|PR      H|PRA   H|PRAT    H|PRATY H|PRATYU  H|PRATYUS
-
+```
 --> In last add column find string which ends with pointer.
 
     Ex--> PRATYUSH|
